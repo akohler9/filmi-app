@@ -82,6 +82,15 @@ body {
   line-height: 1.45;
 }
 
+.trust-line {
+  margin: 0.45rem 0 0;
+  max-width: 30ch;
+  font-size: clamp(0.84rem, 3.4vw, 0.92rem);
+  color: var(--text-muted);
+  opacity: 0.95;
+  line-height: 1.45;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -176,10 +185,28 @@ body {
 }
 
 .segment__title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.segment__name {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
+  min-width: 0;
+}
+
+.segment__price {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
 .segment__meta {
@@ -474,5 +501,39 @@ body {
   line-height: 1.45;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop layout — wider column, calmer vertical rhythm.                     */
+/* Nothing below applies under 960px (mobile/tablet portrait unchanged).    */
+/* -------------------------------------------------------------------------- */
+@media (min-width: 960px) {
+  .app {
+    max-width: 680px;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .main {
+    gap: 1.5rem;
+  }
+
+  .tagline {
+    max-width: 38rem;
+  }
+
+  .trust-line {
+    max-width: 36rem;
+  }
+
+  .card {
+    padding: 1.4rem 1.45rem;
+  }
+
+  .confirmation__card {
+    padding: 1.4rem 1.45rem;
+  }
 }
 
